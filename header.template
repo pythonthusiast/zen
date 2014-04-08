@@ -14,7 +14,7 @@
     <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
     <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
- <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("pythonthusiast.ico")}" />
+ <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("img/pythonthusiast.ico")}" />
 {if $badbehavior}
    {$badbehavior->showBB2JavaScript()}
 {/if}
@@ -34,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>        
-        <a class="navbar-brand" href="{$url->blogLink()}"><img class="img-responsive" src="/img/pythonthusiast.png"/></a>
+        <a class="navbar-brand" href="{$url->blogLink()}"><img class="img-responsive" src="{$url->getTemplateFile("img/pythonthusiast.png")}"/></a>
         
     </div>
 
