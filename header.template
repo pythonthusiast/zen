@@ -14,11 +14,11 @@
     <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
     <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
- <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+ <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("pythonthusiast.ico")}" />
 {if $badbehavior}
    {$badbehavior->showBB2JavaScript()}
 {/if}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="/js/bootstrap.min.js"></script>
 </head>
 
@@ -27,50 +27,68 @@
     <!--<h1 id="header"><a href="{$url->blogLink()}" title="{$blog->getBlog()}">{$blog->getBlog()}</a></h1>-->
 
    <!-- eko -->
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>        
+        <a class="navbar-brand" href="{$url->blogLink()}"><img class="img-responsive" src="/img/pythonthusiast.png"/></a>
+        
+    </div>
 
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="color:rgb(10,10,10);>
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{$url->blogLink()}">{$blog->getBlog()}<br/>A complete tutorial series to the Python software development</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+        <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorial Series <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-header">Desktop Application</li>
+                    <li class="dropdown-header">Desktop Application</li>                    
                     {foreach from=$articlecategories item=articleCategory}
                     <li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a></li>
                     {/foreach}                  
                     <li class="divider"></li>
-                    <li class="dropdown-header">Web Application</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Mobile Application</li>
-                    <li><a href="#">Separated link</a></li>
                 </ul>
               </li>
-                <li class="dropdown">
+            <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recent Articles<b class="caret"></b></a>
                 <ul class="dropdown-menu">                    
                     {foreach from=$recentposts item=recentpost}
                     <li><a title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a>
                     {/foreach}
                 </ul>
-              </li>              
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+              </li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subscribe<b class="caret"></b></a>                
+                <ul class="dropdown-menu">
+                    <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+                    <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+                    <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+                    <li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}">Atom 0.3</a></li>
+                    <li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>                    
+                    </ul>
+                </li>
+                
+        </ul>
+
+        <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search" method="get" action="{$url->getIndexUrl()}">
+            <input type="hidden" name="op" value="Search" />
+            <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+            
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="searchTerms" id="searchTerms">
+            <div class="input-group-btn">
+                <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        </div>
+        </form>
+        </div>
+
     </div>
+</div>   
 <!-- eko -->

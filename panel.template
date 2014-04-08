@@ -12,31 +12,6 @@
   	</ul>
   	</li>
 {/if}
-<div class="Sidetitle">
-   <h4>{$locale->tr("search")}</h4>
-</div>
-<p> 
-   <form name="search_form" method="get" action="{$url->getIndexUrl()}">
-    <input type="text" name="searchTerms" value="" size="14" /><br/>
-    <input type="hidden" name="op" value="Search" />
-    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
-    <input type="submit" name="Search" value="{$locale->tr("search")}" />
-   </form>
-  </p>
-
-
-
-    <li id="meta">
-    {$locale->tr("syndicate")}
-    <ul>
-     <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
-     <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
-     <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
-     <li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}">Atom 0.3</a></li>
-     <li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
-     
-    </ul> 
-    </li>
 
   <li id="style"> 
   {$locale->tr("links")}

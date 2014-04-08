@@ -1,8 +1,12 @@
+.navbar-brand {
+  font-size: 3em;
+  line-height: 1em;
+}
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
-	padding-top: 100px;
-	background: #fff url("images/python-logo.png") left top no-repeat;  
+	#padding-top: 100px;
+	#background: #fff url("images/python-logo.png") left top no-repeat;  
 }
 
 h1, .h1,
