@@ -6,7 +6,6 @@
 	  </div>
 	  
 	  <div class="col-md-9">		  
-<div id="content">
     {assign var="postDate" value=$post->getDateObject()}
     {assign var="postOwner" value=$post->getUserInfo()}
     <h2></h2>
@@ -15,49 +14,39 @@
         {include file="$blogtemplate/post.template"}
         {pager style="links"}
 	
-        {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
-            <br style="clear: both;" />
-           <h2>Leave comments</h2>
-          {include file="$blogtemplate/commentform.template"}
-        {/if}
-	
-         <ul id="commentlist" class="list-group">
-        {foreach from=$comments item=comment}
-        {assign var=commentText value=$comment->getText()}
-	<!--
-		{if $comment->IsPosterAuthenticated()}
-			{assign var=poster value=$comment->getUser()}
-			{if $poster->hasPicture()}
-				{assign var=posterimg value=$poster->getPicture()}
-				<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
-			{/if}
-		{/if}
--->		
-            <li class="list-group-item" id="comment-{$comment->getId()}">
-                <p>{$commentText}</p>
-               
-
-                   <ul class="list-inline">
-		   <li>{if $comment->getUserUrl() != ""}		   
-                    <span class="label label-info"><a href="{$comment->getUserUrl()}" rel="nofollow"}>{$comment->getUsername()}</a></span>
-                   {else}
-                    <span class="label label-info">{$comment->getUsername()}</span>
-                   {/if}
-		   </li>
-		   <li>{assign var=commentDate value=$comment->getDateObject()}		   
-                   <span class="label label-default">{$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}</span></li>
-		</ul>
-		   
-                   
-
-            </li>
-        {/foreach}    
-        </ul>
-            
-
+	<div class="row">
+	<div class="col-md-10">
+	    {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+		<br style="clear: both;" />
+	       <h2>Leave comments</h2>
+	      {include file="$blogtemplate/commentform.template"}
+	    {/if}
+	    
+	     <ul id="commentlist" class="list-group">
+	    {foreach from=$comments item=comment}
+	    {assign var=commentText value=$comment->getText()}
+		<li class="list-group-item" id="comment-{$comment->getId()}">
+		    <p>{$commentText}</p>
+		       <ul class="list-inline">
+		       <li>{if $comment->getUserUrl() != ""}		   
+			<span class="label label-default"><a href="{$comment->getUserUrl()}" rel="nofollow"}>{$comment->getUsername()}</a></span>
+		       {else}
+			<span class="label label-default">{$comment->getUsername()}</span>
+		       {/if}
+		       </li>
+		       <li>{assign var=commentDate value=$comment->getDateObject()}		   
+		       <span class="label label-default"><abbr class="timeago" title="{$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}"></abbr></span></li>
+		    </ul>
+		</li>
+	    {/foreach}    
+	    </ul>
+	    </div>
+	    </div>
+	<div class="col-md-1">
+	</div>
     </div>
 </div>
 	 </div>
-	</div>
+
 </div>
 {include file="$blogtemplate/footer.template"}

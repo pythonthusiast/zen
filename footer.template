@@ -1,6 +1,14 @@
-    </div>
-    {include file="$blogtemplate/../globalfooter.template"}
-</script>
-<script src="/js/pythonthusiast.js"></script>
+    </script>
+    <script src="/js/pythonthusiast.js"></script>
+    
+        <div id="footer" class="navbar-default">
+          <div class="container">
+               <p align="center">
+               <a href="http://pythonblogs.com">Copyright(c) 2014 - Pythonblogs<br/>
+               All rights reserved
+               </a>
+               </p>
+          </div>
+        </div>
     </body>
 </html>

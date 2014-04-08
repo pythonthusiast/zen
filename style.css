@@ -1,3 +1,11 @@
+#footer {
+   /*background-color: rgb(243,119,54);*/
+   bottom: 0;
+   height: 40px;
+   position: relative;
+   font-weight: bold;
+}
+
 .navbar-brand {
   font-size: 3em;
   line-height: 1em;

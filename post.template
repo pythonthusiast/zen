@@ -18,7 +18,7 @@
   		
 
     <ul class="list-inline"><li><a href="#">    
-    Last comment in {$locale->formatDate($postDate,"%H:%M")}    
+    Last comment in <abbr class="timeago" title="{$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}"></abbr>    
     </a></li><li><a href="#"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comment on this")}"><i class="glyphicon glyphicon-comment"></i>&nbsp;{$post->getNumComments()} Comments</a></li></ul>
 
 
