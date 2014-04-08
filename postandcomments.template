@@ -1,12 +1,19 @@
 {include file="$blogtemplate/header.template"}
-
+<div class="container-fluid">
+	<div class="row">
+	  <div class="col-md-3">
+	  {include file="$blogtemplate/panel.template"}
+	  </div>
+	  
+	  <div class="col-md-9">		  
 <div id="content">
     {assign var="postDate" value=$post->getDateObject()}
     {assign var="postOwner" value=$post->getUserInfo()}
-    <h2>{$locale->formatDate($postDate,"%d %b, %Y")}</h2>
+    <h2></h2>
     
     <div class="post">
        <!-- {$url->postTrackbackLink($post)} -->
+       
         {include file="$blogtemplate/post.template"}
         {pager style="links"}    
         <h2 id="comments">{$locale->tr("comments")}</h2>
@@ -44,6 +51,7 @@
         {/if}
     </div>
 </div>
-
-{include file="$blogtemplate/panel.template"}
+	 </div>
+	</div>
+</div>
 {include file="$blogtemplate/footer.template"}

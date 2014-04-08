@@ -1,22 +1,24 @@
 {assign var="postDate" value=$post->getDateObject()}
 {assign var="postOwner" value=$post->getUserInfo()}
-
-
 <div class="row">
   <div class="col-md-12 col-sm-11">
     <h3><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h3>
+    <ul class="list-inline"><li>
+    <span class="label label-default">{$locale->formatDate($postDate,"%d %b, %Y")}</span></li>
+    <li>{foreach name=categories from=$post->getCategories() item=postCategory}	
+	<a class="label label-primary" href="{$url->categoryLink($postCategory)}" title="{$postCategory->getName()}">{$postCategory->getName()}</a>
+      {/foreach}
+    </li>
+    </ul>
+
     <div class="row">
     <div class="col-xs-9">
     {assign var=postText value=$post->getText()}
     {$postText}
   		
-    <p class="pull-right">
-      {foreach name=categories from=$post->getCategories() item=postCategory}	
-	  <a class="label label-default" href="{$url->categoryLink($postCategory)}" title="{$postCategory->getName()}">{$postCategory->getName()}</a>
-      {/foreach}
-    </p>
-    <ul class="list-inline"><li><a href="#">  
-    {$locale->formatDate($postDate,"%H:%M")}    
+
+    <ul class="list-inline"><li><a href="#">    
+    Last comment in {$locale->formatDate($postDate,"%H:%M")}    
     </a></li><li><a href="#"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comment on this")}"><i class="glyphicon glyphicon-comment"></i>&nbsp;{$post->getNumComments()} Comments</a></li></ul>
 
 
