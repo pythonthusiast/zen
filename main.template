@@ -1,16 +1,19 @@
 {include file="$blogtemplate/header.template"}
 
-<div id="content">
- {foreach from=$posts item=post}
-  <div class="post">
-    {include file="$blogtemplate/post.template"}
-  </div>
- {/foreach}
-  <div class="post">{pager style="links"}</div>
-    <p class="credit">
-        Powered by <a href="http://www.lifetype.net" target="_blank">LT</a>
-    </p>
-</div>
 
-{include file="$blogtemplate/panel.template"}
+
+<div class="container-fluid">
+	<div class="row">
+	  <div class="col-md-3">
+	  {include file="$blogtemplate/panel.template"}
+	  </div>
+	  <div class="col-md-9">
+		{foreach from=$posts item=post}
+			<div class="post">
+			{include file="$blogtemplate/post.template"}
+			</div>
+		{/foreach}
+	 </div>
+	</div>
+</div>
 {include file="$blogtemplate/footer.template"}
