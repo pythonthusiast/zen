@@ -19,7 +19,8 @@
    {$badbehavior->showBB2JavaScript()}
 {/if}
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/timeago.js" type="text/javascript"></script>    
 </head>
 
 <body>

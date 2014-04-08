@@ -8,11 +8,12 @@
 	  {include file="$blogtemplate/panel.template"}
 	  </div>
 	  <div class="col-md-9">
+	  
+	  
 		{foreach from=$posts item=post}
-			<div class="post">
 			{include file="$blogtemplate/post.template"}
-			</div>
-		{/foreach}
+		{/foreach}		
+		
 	 </div>
 	</div>
 </div>
