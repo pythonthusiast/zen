@@ -1,3 +1,6 @@
     </div>
-    {include file="$blogtemplate/../globalfooter.template"}</body>
+    {include file="$blogtemplate/../globalfooter.template"}
+</script>
+<script src="/js/pythonthusiast.js"></script>
+    </body>
 </html>

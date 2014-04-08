@@ -1,31 +1,38 @@
 
-<div id="menu">
-<ul>
+
+<!--
 {assign var=blogOwner value=$blog->getOwnerInfo()}
 {assign var=AboutMyself value=$blogOwner->getAboutMyself()}
 {if $blogOwner->hasPicture() && $AboutMyself}  
-  	<li id="about_myself">{$locale->tr("about_myself")}
-  	<ul>
-  	{assign var=picture value=$blogOwner->getPicture()}
-  	<li><img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></li>
-  	<p>{$AboutMyself}</p>
-  	</ul>
-  	</li>
-{/if}
 
-  <li id="style"> 
-  {$locale->tr("links")}
-  <ul>
-   {foreach from=$mylinkscategories item=linkcategory}
-     <li><b>{$linkcategory->getName()}</b>
-     <ul>
-      {foreach from=$linkcategory->getLinks() item=link}
-       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
-      {/foreach}
-     </ul>
-    </li>
-   {/foreach}  
-   </ul>
-    </li>
-</ul> 
+
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></li>
+  	<p>{$AboutMyself}</p>
+
+{/if}
+-->  
+
+
+
+  
+<div class="row">
+  <div class="span3">
+    <div class="well">
+        <div>
+            <ul class="nav nav-list">
+		{foreach from=$mylinkscategories item=linkcategory}
+			<li><label class="tree-toggle nav-header">{$linkcategory->getName()}</label>
+				<ul class="nav nav-list tree">		  
+					{foreach from=$linkcategory->getLinks() item=link}
+					<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>		    
+					{/foreach}
+				</ul>
+			</li>
+		{/foreach}  	    
+            </ul>
+        </div>
+    </div>
+    </div>
 </div>
+
