@@ -3,13 +3,10 @@
 	<div class="row">
 	  <div class="col-md-3">
 	  {include file="$blogtemplate/panel.template"}
-	  </div>
-	  
+	  </div>	  
 	  <div class="col-md-9">		  
     {assign var="postDate" value=$post->getDateObject()}
     {assign var="postOwner" value=$post->getUserInfo()}
-    <h2></h2>
-    
     <div class="post">       
         {include file="$blogtemplate/post.template"}
         {pager style="links"}

@@ -1,7 +1,7 @@
     </script>
     <script src="/js/pythonthusiast.js"></script>
     
-        <div id="footer" class="navbar-default">
+        <div id="footer" >
           <div class="container">
                <p align="center">
                <a href="http://pythonblogs.com">Copyright(c) 2014 - Pythonblogs<br/>
