@@ -11,16 +11,20 @@
     {assign var="postOwner" value=$post->getUserInfo()}
     <h2></h2>
     
-    <div class="post">
-       <!-- {$url->postTrackbackLink($post)} -->
-       
+    <div class="post">       
         {include file="$blogtemplate/post.template"}
-        {pager style="links"}    
-        <h2 id="comments">{$locale->tr("comments")}</h2>
-        
-         <ol id="commentlist">
+        {pager style="links"}
+	
+        {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+            <br style="clear: both;" />
+           <h2>Leave comments</h2>
+          {include file="$blogtemplate/commentform.template"}
+        {/if}
+	
+         <ul id="commentlist" class="list-group">
         {foreach from=$comments item=comment}
         {assign var=commentText value=$comment->getText()}
+	<!--
 		{if $comment->IsPosterAuthenticated()}
 			{assign var=poster value=$comment->getUser()}
 			{if $poster->hasPicture()}
@@ -28,27 +32,29 @@
 				<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
 			{/if}
 		{/if}
-            <li id="comment-{$comment->getId()}">
+-->		
+            <li class="list-group-item" id="comment-{$comment->getId()}">
                 <p>{$commentText}</p>
                
-               	<p><cite>{$locale->tr("posted_by")}
-                   {if $comment->getUserUrl() != ""}
-                    <a href="{$comment->getUserUrl()}" rel="nofollow"}>{$comment->getUsername()}</a>
+
+                   <ul class="list-inline">
+		   <li>{if $comment->getUserUrl() != ""}		   
+                    <span class="label label-info"><a href="{$comment->getUserUrl()}" rel="nofollow"}>{$comment->getUsername()}</a></span>
                    {else}
-                    {$comment->getUsername()}
-                   {/if} &#8212;
-                   {assign var=commentDate value=$comment->getDateObject()}
-                   {$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}
-                </cite></p>
+                    <span class="label label-info">{$comment->getUsername()}</span>
+                   {/if}
+		   </li>
+		   <li>{assign var=commentDate value=$comment->getDateObject()}		   
+                   <span class="label label-default">{$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}</span></li>
+		</ul>
+		   
+                   
+
             </li>
         {/foreach}    
-        </ol>
+        </ul>
             
-        {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
-            <br style="clear: both;" />
-           <h2>{$locale->tr("add_comment")}</h2>
-          {include file="$blogtemplate/commentform.template"}
-        {/if}
+
     </div>
 </div>
 	 </div>
