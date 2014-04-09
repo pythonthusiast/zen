@@ -19,8 +19,18 @@
 
     <ul class="list-inline"><li><a href="#">    
     Last comment in <abbr class="timeago" title="{$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}"></abbr>    
-    </a></li><li><a href="#"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comment on this")}"><i class="glyphicon glyphicon-comment"></i>&nbsp;{$post->getNumComments()} Comments</a></li></ul>
-
+    </a></li><li><a href="#"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comment on this")}"><i class="glyphicon glyphicon-comment"></i>&nbsp;{$post->getNumComments()} Comments</a></li>
+    </li>
+    <p>
+    <ul class="list-inline">
+    <li><span class='st_facebook_hcount' displayText='Facebook'></span></li>
+    <li><span class='st_twitter_hcount' displayText='Tweet'></span></li>
+    <li><span class='st_reddit_hcount' displayText='Reddit'></span></li>    
+    <li><span class='st_linkedin_hcount' displayText='LinkedIn'></span></li>
+    <li><span class='st_googleplus_hcount' displayText='Google +'></span></li>
+    </li>
+    </ul>
+    </p>
 
     
   </div>
