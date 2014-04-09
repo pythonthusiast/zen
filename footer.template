@@ -1,10 +1,10 @@
     </script>
-    <script src="/js/pythonthusiast.js"></script>
+    <script src="{$url->getTemplateFile("js/pythonthusiast.js")}"></script>
     
         <div id="footer" >
           <div class="container">
                <p align="center">
-               <a href="http://pythonblogs.com">Copyright(c) 2014 - Pythonblogs<br/>
+               <a href="http://pythonblogs.com">Copyright(c) 2014 - Eko S. Wibowo<br/>
                All rights reserved
                </a>
                </p>
