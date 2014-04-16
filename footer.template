@@ -1,10 +1,11 @@
     </script>
     <script src="{$url->getTemplateFile("js/pythonthusiast.js")}"></script>
     
-        <div id="footer" >
+        <div>
           <div class="container">
                <p align="center">
-               <a href="http://pythonblogs.com">Copyright(c) 2014 - Eko S. Wibowo<br/>
+               Copyright(c) 2014 - PythonBlogs.com<br/>               
+               By using this website, you signify your acceptance of Terms and Conditions and Privacy Policy<br/>
                All rights reserved
                </a>
                </p>

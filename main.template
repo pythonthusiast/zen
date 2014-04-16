@@ -11,4 +11,9 @@
 	 </div>
 	</div>
 </div>
+		<div class="post">{pager style="links"}</div>
+			<p class="credit" align="center">
+			Powered by <a href="http://pythonblogs.com" target="_blank">PythonBlogs</a>
+			</p>
+		</div>
 {include file="$blogtemplate/footer.template"}
