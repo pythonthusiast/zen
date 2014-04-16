@@ -2,7 +2,7 @@
 {assign var="postOwner" value=$post->getUserInfo()}
 <div class="row">
   <div class="col-md-12 col-sm-11">
-    <h3><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h3>
+    <h1><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h1>
     <ul class="list-inline"><li>
     <span class="label label-default">{$locale->formatDate($postDate,"%d %b, %Y")}</span></li>
     <li>{foreach name=categories from=$post->getCategories() item=postCategory}	

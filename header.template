@@ -35,6 +35,8 @@
     <link rel="stylesheet" title="default" type="text/css" media="screen" href="{$url->getTemplateFile("style/style.css")}" />
     <link rel="stylesheet" title="default" type="text/css" media="screen" href="{$url->getTemplateFile("style/bootstrap.css")}" />
 
+    <link type="text/css" rel="stylesheet" href="{$url->getTemplateFile("style/jquery.tocify.css")}" />
+
     <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
     <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
     <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
@@ -48,6 +50,8 @@
     <script src="{$url->getTemplateFile("js/jquery.min.js")}"></script>
     <script src="{$url->getTemplateFile("js/bootstrap.min.js")}"></script>
     <script src="{$url->getTemplateFile("js/timeago.js")}" type="text/javascript"></script>
+    <script src="{$url->getTemplateFile("js/jquery-ui-1.10.4.custom.min.js")}"></script>
+    <script src="{$url->getTemplateFile("js/jquery.tocify.min.js")}"></script>    
 </head>
 
 <body>

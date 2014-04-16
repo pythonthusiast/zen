@@ -4,5 +4,6 @@ $(document).ready(function() {
 	});
 	
 	$("abbr.timeago").timeago();
+	$("#toc").tocify({ selectors: "h1, h2, h3, h4", showEffect: "fadeIn"}).data("toc-tocify");
 });
         
