@@ -108,7 +108,7 @@
                     <li><a title="Email" href="mailto:swdev.bali@gmail.com">Email</a></li>
                     <li><a title="Github" href="https://github.com/pythonthusiast">Github</a></li>
                     </ul>
-                </li>                
+                </li>
         </ul>
 
         <div class="col-sm-3 col-md-3 pull-right">
@@ -124,6 +124,7 @@
                 </div>
             </form>
         </div>
+    <a href="http://www.pythonblogs.com/?op=Register&start=1"><img style="position: absolute; top: 0; right: 0; border: 0;" src="{$url->getTemplateFile("img/newblog.png")}" alt="Get your own PythonBlogs">
     </div>
 </div>   
 <!-- eko -->
