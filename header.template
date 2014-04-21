@@ -49,6 +49,7 @@
 {/if}
     <script src="{$url->getTemplateFile("js/jquery.min.js")}"></script>
     <script src="{$url->getTemplateFile("js/bootstrap.min.js")}"></script>
+    <script src="{$url->getTemplateFile("js/pythonblogs.js")}"></script>
     <script src="{$url->getTemplateFile("js/timeago.js")}" type="text/javascript"></script>
     <script src="{$url->getTemplateFile("js/jquery-ui-1.10.4.custom.min.js")}"></script>
     <script src="{$url->getTemplateFile("js/jquery.tocify.min.js")}"></script>    
